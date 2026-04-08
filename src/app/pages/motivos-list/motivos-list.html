@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="tabla-container">
+    <div class="px-2">
+      <h3>Filtros</h3>
+      <form [formGroup]="myForm" class="flex gap-2">
+        <div class="flex flex-column">
+          <label>Motivo</label>
+          <input pInputText type="text" formControlName="motivo" placeholder="Motivo" />
+        </div>
+        <div class="flex flex-column">
+          <label>Descripcion</label>
+          <input pInputText type="text" formControlName="descripcion" placeholder="Descripcion" />
+        </div>
+        <div class="flex items-center">
+          <p-button label="Filtrar" icon="pi pi-search" type="submit"></p-button>
+        </div>
+      </form>
+    </div>
+    <div class="px-3 pt-3 pb-2">
+      <span>Listado de motivos</span>
+    </div>
+    <div class="card">
+      <p-table [value]="motivos()" scrollable scrollHeight="600px">
+        <ng-template #header>
+          <tr>
+            <th>Motivo</th>
+            <th>Descripcion</th>
+            <th>Tipo</th>
+            <th>Tipo Motivo</th>
+            <th>Acciones</th>
+          </tr>
+        </ng-template>
+        <ng-template #body let-motivo>
+          <tr>
+            <td>{{ motivo.motivo }}</td>
+            <td>{{ motivo.descripcion }}</td>
+            <td>{{ motivo.tipo }}</td>
+            <td>{{ motivo.tipo_motivo }}</td>
+            <td class="flex gap-2">
+              <i class="pi pi-pencil"></i>
+              <i class="pi pi-trash"></i>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>

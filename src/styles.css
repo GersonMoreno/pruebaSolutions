@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'primeflex/primeflex.css';
+@import 'primeicons/primeicons.css';
+
+body {
+  color: #495057;
+}
+.container {
+  padding: 20px 80px;
+}
